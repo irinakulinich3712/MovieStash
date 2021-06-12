@@ -1,0 +1,10 @@
+.pagination(data-page=`${data.currentPage}` data-pages=`${data.pages}`)
+  ul 
+    li.pagination__item.pagination__item--btn.pagination__item--prev
+      svg.pagination__icon
+          use(xlink:href="./images/sprite.svg#icon-keyboard_arrow_left")    
+      span Prev
+    li.pagination__item.pagination__item--btn.pagination__item--next(data-page='')
+      span Next
+      svg.pagination__icon
+          use(xlink:href="./images/sprite.svg#icon-navigate_next")  

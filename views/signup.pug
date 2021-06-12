@@ -1,0 +1,12 @@
+extends base
+block content
+  .form-container
+    .form-wrapper
+      h1 Signup
+      form.form.form--signup(autocomplete="off")  
+        input.form__input#name(type="text" placeholder="Your name")  
+        input.form__input#email(type="email" placeholder="example@xyz.com")     
+        input.form__input#password-signup(type="password" placeholder="Your password")   
+        input.form__input#password-confirm(type="password" placeholder="Confirm password")
+        button.form__btn Signup             
+          

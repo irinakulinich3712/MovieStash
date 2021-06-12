@@ -1,0 +1,15 @@
+extends base
+block content
+  include _sidebar
+  include _header 
+  section.movies
+    if user.favourites.length != 0
+      each movie in user.favourites
+        .movie(data-movie-id=movie.id)
+          a(href=`http://127.0.0.1:8000/${movie.movieId}`) 
+            img.movie__img(src=movie.posterPath alt='Movie')
+          h5.movie__name=movie.title
+          p.movie__year=movie.date
+          p=movie.pages
+    else 
+      div You have no movies in your favourites yet

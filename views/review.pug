@@ -1,0 +1,14 @@
+extends base
+block content
+  if user
+  include _sidebar
+  include _header
+  each item in movieItems
+    if item.reviews.length
+      .modal.reviewMovie(data-id=item._id)
+        .modal__wrapper(style=`background-image: linear-gradient(to right bottom, rgba(31, 30, 30, 0.9), rgba(10, 10, 10, 0.9)), url(${item.backdropPath}); background-repeat:no-repeat; background-size:cover; background-position:top`)
+          .modal__poster
+            img(src=item.posterPath, alt="Movie")
+          -const rev = item.reviews.reverse()
+          .modal__content=rev[0].review
+  .footer

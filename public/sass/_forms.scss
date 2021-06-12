@@ -1,0 +1,59 @@
+.form-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-image: linear-gradient(to right bottom, rgba(240, 240, 240, 0.8), rgba(107, 107, 107, 0.8)), url('./../images/movies-bg4.jpg');
+  background-image: linear-gradient(to right bottom, rgba(49, 49, 49, 0.8), rgba(22, 22, 22, 0.8)), url('./../images/movies-bg4.jpg');
+
+
+  background-size: cover;
+  background-position: top;
+  position: relative;
+}
+
+
+.form-wrapper {
+  width: 40rem;
+  padding: 4rem 4rem 6rem; 
+  text-align: center;
+}
+
+.form-wrapper h1 {
+  color: $color-white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .4rem;
+  font-size: 3.5rem;
+}
+
+.form {
+
+  &__input {
+    @include form-style;
+    
+  }
+
+  &__input::placeholder {
+    font-size: 1.6rem;
+  }
+
+  &__btn {
+    @include form-style;
+    display: flex;
+    justify-content: center;  
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__btn:hover {
+    box-shadow: 0 0 10px 4px rgb(52, 73, 94);
+  }
+
+  &__input--active {
+    box-shadow: 0 0 10px 4px rgb(52, 73, 94);
+
+  }
+
+}

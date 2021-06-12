@@ -1,0 +1,59 @@
+// COLOR VARIABLES
+$color-white: #ffffff;
+$color-black: #000000;
+
+$color-lightgray: #d5d6d9;
+
+$color-darkslategray-1: #182130;
+$color-darkslategray-2: #232c3b;
+$color-darkslategray-3: #2c3543;
+
+$color-dark-1: #151c29;
+$color-dark-2: #0f1828;
+
+$color-indianred:#9f5e64;
+
+
+
+
+// FONT VARIABLES
+$font-primary: 'Nunito', sans-serif;
+$font-display: 'Josefin Sans', sans-serif;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; //10px/16px = 62.5% -> 1rem = 10px
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-white;
+  font-weight: 300;
+  line-height: 1.6;
+  background-color: $color-darkslategray-1;
+
+  // min-height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 10vh min-content;
+  grid-template-columns: [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr) [center-start] 
+  repeat(8, minmax(min-content, 14rem)) [center-end] minmax(6rem, 1fr) [full-end];
+
+  // & > * {
+  //   padding: 40px;
+  //   font-size: .5rem;
+  // }
+}
+

@@ -1,0 +1,65 @@
+extends base
+block content
+  include _sidebar
+  include _header
+  .modal-window
+    textarea
+    button.modal-window__close Close
+    button.modal-window__save(data-user-id=user._id data-movie-id=data.movieId) Save
+  if data
+    .modal
+      .modal__wrapper(style=`background-image: linear-gradient(to right bottom, rgba(31, 30, 30, 0.9), rgba(10, 10, 10, 0.9)), url(${data.backdropPath}); background-repeat:no-repeat; background-size:cover; background-position:top`)
+        .modal__poster
+          img(src=data.posterPath, alt="Movie")
+        .modal__content
+          h2.modal__title
+            span.name=data.title
+            span.year=`(${data.date.slice(0, 4)})`
+          .modal__facts
+            .full-year=data.date
+            .countries
+              each country in data.countries
+                span.country=`${country.iso_3166_1}, `
+            .genres  
+              each genre in data.genres
+                span.genre=`${genre.name}, `
+            .run-time=`${data.runtime}m`
+          .modal__buttons
+            if user
+              .add-to-watchlist.modal__btn( data-movie=data data-user=user._id data-watchlist=user.watchlist)
+                svg.menu__list-icon.menu__list-icon--watchlist
+                  use(xlink:href="./images/sprite.svg#icon-bookmark-add")
+                  each id in user.watchlist
+                    if id.movieId == data.movieId
+                      use(xlink:href="./images/sprite.svg#icon-bookmark-remove")     
+              each id in user.watchlist
+                if user && id.movieId == data.movieId     
+                  .add-to-favourites.modal__btn(data-movie=data.movieId data-user=user._id data-fav=user.favourites)
+                    svg.menu__list-icon.menu__list-icon--watchlist
+                      use(xlink:href="./images/sprite.svg#icon-heart1")
+                      each id in user.favourites
+                        if id.movieId == data.movieId
+                          use(xlink:href="./images/sprite.svg#icon-heart")
+            else
+            .see-at-homepage.modal__btn
+              a(href=`${data.homepage}`) 
+                svg.menu__list-icon.menu__list-icon--watchlist
+                  use(xlink:href="./images/sprite.svg#icon-eye")
+          .modal__main-info
+            h3.tagline=data.tagline
+            h3 Overview
+            p.overview=data.overview
+          if user        
+            each id in user.favourites
+              if id.movieId == data.movieId  
+                .add-review Add review
+
+                
+    if user       
+      each id in user.favourites
+        if user && id.movieId == data.movieId
+          .review     
+  else
+    div.err=err  
+  .footer          
+    

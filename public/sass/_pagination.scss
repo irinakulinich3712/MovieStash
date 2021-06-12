@@ -1,0 +1,51 @@
+.pagination {
+  grid-column: full-start / full-end;
+
+  &__item {
+    list-style: none;
+    line-height: 4.5rem;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  &__icon {
+    height: 3rem;
+    width: 3rem;
+    fill:  $color-lightgray;
+  }
+
+  &__item--active {
+    background-color: $color-indianred;
+  }
+
+  &__item--btn {
+    background-color: $color-indianred;
+    padding: 0 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &__item--prev {
+    border-radius: 25px 5px 5px 25px;
+  }
+
+  &__item--next {
+    border-radius: 5px 25px 25px 5px;
+  }
+
+ 
+  
+}
+.pagination ul {
+  width: 20%;
+  margin: 3rem auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-darkslategray-3;
+  color: $color-lightgray;
+  padding: 0.8rem;
+  border-radius: 50px;
+}

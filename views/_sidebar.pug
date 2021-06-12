@@ -1,0 +1,22 @@
+.sidebar
+  nav.menu 
+    ul.menu__list 
+      //- li.menu__list-item
+      //-   svg.menu__list-icon.menu__list-icon--options
+      //-     use(xlink:href="./images/sprite.svg#icon-equalizer")
+      if user 
+        li.menu__list-item
+          a(href="http://127.0.0.1:8000/my-watchlist")
+            svg.menu__list-icon.menu__list-icon--watchlist
+              use(xlink:href="./images/sprite.svg#icon-bookmark")
+        li.menu__list-item
+          a(href="my-favourites")
+            svg.menu__list-icon.menu__list-icon--favourites
+              use(xlink:href="./images/sprite.svg#icon-heart2")
+        //- li.menu__list-item
+        //-   a(href="#")
+        //-     svg.menu__list-icon.menu__list-icon--recommended
+        //-       use(xlink:href="./images/sprite.svg#icon-star")  
+
+
+            

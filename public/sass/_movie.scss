@@ -1,0 +1,165 @@
+.modal {
+  grid-column: full-start / full-end;
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    padding: 5rem 10rem;
+  }
+  &__poster {
+    flex: 0 0 25%;
+    margin-right: 5rem;
+  }
+
+  &__poster img{
+    display: block;
+    width: 100%;
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 3rem;
+  }
+
+  &__title .name {
+    margin-right: 1rem;
+    font-weight: 700;
+  }
+
+  &__facts {
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+  }
+  
+  &__facts div:not(:last-of-type) {
+    margin-right: 2rem;
+    position: relative;
+  }
+
+  &__facts div:not(:last-of-type)::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    transform: translateY(-50%);
+    right: -1.2rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: $color-white;
+  }
+
+  &__buttons {
+    cursor: pointer;
+    display: flex; 
+    margin-bottom: 3rem;
+  }
+
+  &__main-info h3 {
+    font-size: 2.5rem;
+  }
+
+  &__btn {
+    @include movie-card-btn;    
+  }
+
+  &__btn svg {
+    fill: $color-white;
+
+  }
+
+  &__btn.see-at-imdb {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  &__btn:not(:last-of-type) {
+    margin-right: 2.5rem;
+  }
+
+  &__btn-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+.overview {
+  font-size: 2rem;
+}
+
+.review {
+  margin: 3rem auto 1rem;
+  height: auto;
+  width: 50%;
+  outline: none;
+  line-break: normal;
+  grid-column: full-start / full-end;
+  font-size: 1.7rem;
+}
+
+.add-review {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #34b26b;
+  font-style: italic;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
+
+// .add-review:link,
+// .add-review:visited {
+//   cursor: pointer;
+//   font-size: 2rem;
+//   font-weight: 600;
+//   color: #34b26b;
+//   font-style: italic;
+//   margin-top: 3rem;
+//   text-decoration: none;
+//   cursor: pointer;
+// }
+
+.modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  min-height: 400px;
+  visibility: none;
+  opacity: 0;
+  background-color: $color-white;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 2rem;
+}
+
+.modal-window__close {
+  margin-bottom: 2px;
+}
+
+.modal-window--active {
+  visibility: visible;
+  opacity: 1;
+  z-index: 600;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.reviewMovie {
+  width: 80%;
+  margin: 5rem auto;
+}
+
+.reviewMovie .modal__content {
+  font-size: 2rem;
+  word-break: break-all;
+  margin-left: 10rem;
+}

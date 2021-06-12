@@ -1,0 +1,21 @@
+header.header
+  .movie-categories
+    a(href="http://127.0.0.1:8000/top-rated").movie-category Top rated
+  form.search
+    input.search__field(type="text" placeholder="Search over 600 000 movies")
+    button.btn.search__btn
+      //- svg.search__icon
+        //- use(xlink:href="")
+      span Search
+  .user-block
+    if user 
+      a.user-block__el.user-block__el--logout Log out
+      a.user-block__el
+        span.user-name=`Hello ${user.name.split(' ')[0]}`
+    else 
+      a.user-block__el(href='/login') Log in
+      a.user-block__el.user-block__el--cta(href='/signup') Sign up
+
+
+
+  
